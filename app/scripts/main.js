@@ -7,7 +7,7 @@ window.$ = $;
 window.jQuery = jQuery;
 
 import sticky from './components/jquery.sticky'
-import Vue from './components/vue'
+// import Vue from './components/vue'
 import Example from './components/example'
 
 //Main Nav Sticker
