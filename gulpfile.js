@@ -100,14 +100,16 @@ gulp.task('images', () => {
 //Make Sprites
 gulp.task('sprite', function() {
     var spriteData = 
-        gulp.src('app/images/icons/*.*') // source path of the sprite images
+        gulp.src('app/images/icons/*.png') // source path of the sprite images
             .pipe(spritesmith({
-                imgName: '../sprite.png',
-                cssName: 'sprite.scss',
+                retinaSrcFilter: ['app/images/icons/*@2x.png'],
+                imgName: 'sprite.png',
+                retinaImgName: 'sprite@2x.png',
+                cssName: 'sprite.scss'
             }));
 
     spriteData.img.pipe(gulp.dest('app/images/')); // output path for the sprite
-    spriteData.css.pipe(gulp.dest('app/styles/lib/')); // output path for the CSS
+    spriteData.css.pipe(gulp.dest('app/styles/general/icons')); // output path for the CSS
 });
 
 gulp.task('fonts', () => {
